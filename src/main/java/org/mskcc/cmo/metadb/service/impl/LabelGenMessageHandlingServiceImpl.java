@@ -162,9 +162,19 @@ public class LabelGenMessageHandlingServiceImpl implements MessageHandlingServic
                             List<SampleMetadata> existingSamples =
                                     patientSamplesMap.getOrDefault(sample.getCmoPatientId(),
                                             new ArrayList<>());
-                            // TODO resolve any issues that arise with errors in generating cmo label
-                            String sampleCmoLabel = cmoLabelGeneratorService.generateCmoSampleLabel(
+
+                            // CHANGES FOR BACKFILLING
+                            String sampleCmoLabel;
+                            if (sample.getCmoSampleName() == null || sample.getCmoSampleName().isEmpty()) {
+                                sampleCmoLabel = cmoLabelGeneratorService.generateCmoSampleLabel(
                                     requestId, sample, existingSamples);
+                            } else {
+                                sampleCmoLabel = sample.getCmoSampleName();
+                            }
+
+                            // TODO resolve any issues that arise with errors in generating cmo label
+//                            String sampleCmoLabel = cmoLabelGeneratorService.generateCmoSampleLabel(
+//                                    requestId, sample, existingSamples);
 
                             // check if matching sample found and determine if label actually needs updating
                             // or if we can use the same label that is already persisted for this sample
