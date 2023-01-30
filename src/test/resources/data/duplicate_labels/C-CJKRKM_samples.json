@@ -1,4 +1,5 @@
-[
+{
+"samples": [
   {
     "smileSampleId": "8c91bd21-fa36-4721-854b-c0813c147c5d",
     "smilePatientId": "424cc849-2808-48c8-b9f1-8f92b6719409",
@@ -579,3 +580,4 @@
     }
   }
 ]
+}
