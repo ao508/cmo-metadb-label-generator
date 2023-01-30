@@ -25,3 +25,6 @@ mockRequest2aEmptySampleManifestValues	incoming_requests/mocked_request2a_one_em
 mockRequest1SamplesMissingFastQs	incoming_requests/mocked_request1_sample_missing_fastqs.json	Mock requset json with 2 samples missing fastqs
 mockRequest1AllSamplesMissingFastQs	incoming_requests/mocked_request1_all_samples_missing_fastqs.json	Mock requset json with all samples missing fastqs
 mockRequest1eNullStringBaitSet	incoming_requests/mocked_request1e_null_string_baitset.json	Mock requset json with "null" baitset values
+cmoPatientSampleJsonResponse	duplicate_labels/C-CJKRKM_samples.json	all existing samples for cmo patient
+sampleImportedFirstWithDuplicateLabel	duplicate_labels/05791_AM_17.json	sample imported first linked to patient C-CJKRKM
+sampleImportedSecondWithDuplicateLabel	duplicate_labels/05791_AQ_4.json	sample imported second linked to patient C-CJKRKM which should not have been given the same cmo label
